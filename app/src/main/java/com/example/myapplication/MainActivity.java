@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,10 +20,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         this.tvMain = findViewById(R.id.textView);
-    }
-    public void ChangeTexT(View view)
-    {
-    this.tvMain.setText("Change Text");
-    }
 
+        Button knopka = (Button) findViewById(R.id.knopka);
+        knopka.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                tvMain.setText("Changed Text");
+            }
+        });
+    }
 }
